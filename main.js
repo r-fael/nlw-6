@@ -20,11 +20,38 @@ for (const link of links) {
 const header = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
-window.addEventListener("scroll", function() {
+window.addEventListener('scroll', function () {
   if (window.scrollY >= navHeight) {
-    header.classList.add("scroll") 
-  }
-  else{
-    header.classList.remove("scroll")
+    header.classList.add('scroll')
+  } else {
+    header.classList.remove('scroll')
   }
 })
+
+/* TESTIMONIALS SLIDES */
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: false,
+  keyboard: true
+})
+
+/* scroll reveal */
+
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700,
+  reset: true
+})
+
+scrollReveal.reveal(
+  `#home .image, #home .text,
+#about .image, #about .text,
+#services header, #services .card,
+#testimonials header, #testimonials .testimonials,
+#contact .title, #contact p, #contact .button, #contact .links`,
+  { interval: 100 }
+)
