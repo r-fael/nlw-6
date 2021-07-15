@@ -32,6 +32,10 @@ img {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
 }
 
 /*====  BASE ============================ */
@@ -46,7 +50,7 @@ body {
 }
 
 .title {
-  font: 700 1.875rem 'Poppins', sans-serif;
+  font: 700 var(--title-font-size) 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -108,6 +112,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
+
 #header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
@@ -138,6 +146,10 @@ main {
 
 .logo span {
   color: var(--base-color);
+}
+
+.logo-alt span {
+  color: var(--body-color);
 }
 
 /*====  NAVIGATION ============================ */
@@ -426,8 +438,8 @@ nav.show .icon-close {
   margin-bottom: 2rem;
 }
 
-#contact .button i, 
-#contact ul li i{
+#contact .button i,
+#contact ul li i {
   font-size: 1.5rem;
   margin-right: 0.625rem;
 }
@@ -442,5 +454,75 @@ nav.show .icon-close {
 }
 
 #contact ul li i {
-  color: var(--base-color)
+  color: var(--base-color);
 }
+
+/*==== FOOTER ============================ */
+
+footer {
+  background: var(--base-color);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+
+footer .social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+footer .social a {
+  transition: 0.3s;
+}
+
+footer .social a:hover {
+  transform: translateY(-4px);
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.6rem;
+  clip-path: circle();
+  font-size: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(100%);
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/* media queries */
+/* EXTRA LARGE DEVICES: 1200 > */
+@media (min-width: 1200px) {
+}
+/* LARGE DEVICES: 1023 > */
+/* LARGE DEVICES: 992 > */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
+/* MEDIUM DEVICES: 767 > */
