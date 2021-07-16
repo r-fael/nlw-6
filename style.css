@@ -23,15 +23,16 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 159;
+  --hue: 136;
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 36% 57%);
-  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color: hsl(var(--hue) 70% 59%);
+  --base-color-second: hsl(var(--hue) 24%, 13%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
-  --title-color: hsl(var(--hue) 41% 10%);
-  --text-color: hsl(0 0% 46%);
-  --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 98%);
+  --title-color: hsl(0, 0%, 100%);
+  --text-color: hsl(209, 100%, 96%);
+  --text-color-light: hsl(151, 100%, 92%);
+  --body-color: hsl(214, 11%, 11%);
+  --body-color-alt: hsl(151, 24%, 13%);
 
   /* fonts */
   --title-font-size: 1.875rem;
@@ -144,7 +145,7 @@ body {
 /*====  LOGO ============================ */
 .logo {
   font: 700 1.31rem var(--title-font);
-  color: var(--title-color);
+  color: var(--base-color);
 }
 
 .logo span {
@@ -152,7 +153,7 @@ body {
 }
 
 .logo-alt span {
-  color: var(--body-color);
+  color: var(--title-color);
 }
 
 /*====  NAVIGATION ============================ */
@@ -274,7 +275,7 @@ nav.show div.icon-close {
   content: '';
   height: 100%;
   width: 100%;
-  background: var(--base-color-second);
+  background: var(--base-color);
   position: absolute;
   top: -16.8%;
   left: 16.7%;
@@ -307,7 +308,7 @@ nav.show div.icon-close {
 
 /*====  ABOUT ============================ */
 #about {
-  background: white;
+  background: var(--base-color-alt);
 }
 
 #about .container {
@@ -322,7 +323,7 @@ nav.show div.icon-close {
   content: '';
   height: 100%;
   width: 100%;
-  background: var(--base-color-second);
+  background: var(--body-color);
   position: absolute;
   top: -8.3%;
   left: -33%;
@@ -370,7 +371,7 @@ nav.show div.icon-close {
 
 /*====  TESTIMONIALS ============================ */
 #testimonials {
-  background: white;
+  background: var(--base-color-alt);
 }
 
 #testimonials .container {
@@ -385,6 +386,7 @@ nav.show div.icon-close {
 }
 
 #testimonials blockquote {
+  border: solid var(--body-color);
   padding: 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem;
